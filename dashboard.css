@@ -462,21 +462,34 @@ body::before {
 /* ==================== PERFORMANCE CARD ==================== */
 .performance-card {
     height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.performance-card h3 {
+    margin-bottom: var(--spacing-lg);
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
+    flex: 1;
+    align-items: center;
 }
 
 .stat-item {
     text-align: center;
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     background: var(--bg-overlay);
     border-radius: var(--border-radius);
     border: 1px solid rgba(0, 243, 255, 0.2);
     transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 160px;
 }
 
 .stat-item:hover {
@@ -659,11 +672,23 @@ body::before {
     text-shadow: 0 0 8px var(--color-danger);
 }
 
+/* ==================== RECENT EXAMS CARD ==================== */
+.recent-exams-card {
+    min-height: 300px;
+}
+
 /* ==================== WEAK AREAS CARD ==================== */
+.weak-areas-card {
+    height: 100%;
+    min-height: 400px;
+}
+
 .weak-areas-list {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 .weak-area-item {
@@ -883,12 +908,20 @@ body::before {
 /* ==================== QUICK ACTIONS CARD ==================== */
 .quick-actions-card {
     height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-actions-card h3 {
+    margin-bottom: var(--spacing-lg);
 }
 
 .actions-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
+    flex: 1;
 }
 
 .action-btn {
@@ -901,6 +934,7 @@ body::before {
     background: var(--bg-overlay);
     cursor: pointer;
     transition: all var(--transition);
+    min-height: 80px;
 }
 
 .action-btn:hover {
