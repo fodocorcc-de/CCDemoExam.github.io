@@ -40,8 +40,93 @@
     <!-- Initialize App -->
     <script type="text/babel">
         const { useState, useEffect } = React;
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<Dashboard />);
+
+        // Add error boundary
+        class ErrorBoundary extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { hasError: false, error: null };
+            }
+
+            static getDerivedStateFromError(error) {
+                return { hasError: true, error };
+            }
+
+            componentDidCatch(error, errorInfo) {
+                console.error('Dashboard Error:', error, errorInfo);
+            }
+
+            render() {
+                if (this.state.hasError) {
+                    return (
+                        <div style={{
+                            padding: '40px',
+                            textAlign: 'center',
+                            fontFamily: 'Arial, sans-serif'
+                        }}>
+                            <h1>⚠️ Dashboard Error</h1>
+                            <p>Something went wrong loading the dashboard.</p>
+                            <pre style={{
+                                background: '#f5f5f5',
+                                padding: '20px',
+                                borderRadius: '8px',
+                                textAlign: 'left',
+                                overflow: 'auto'
+                            }}>
+                                {this.state.error?.toString()}
+                            </pre>
+                            <button onClick={() => window.location.reload()}
+                                style={{
+                                    padding: '10px 20px',
+                                    background: '#3b82f6',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: '6px',
+                                    cursor: 'pointer',
+                                    marginTop: '20px'
+                                }}>
+                                Reload Page
+                            </button>
+                        </div>
+                    );
+                }
+                return this.props.children;
+            }
+        }
+
+        // Wait for all components to load
+        setTimeout(() => {
+            try {
+                console.log('Initializing dashboard...');
+                console.log('MockAPI available:', typeof window.MockAPI !== 'undefined');
+                console.log('useDashboardData available:', typeof window.useDashboardData !== 'undefined');
+                console.log('DashboardCards available:', typeof window.DashboardCards !== 'undefined');
+                console.log('DashboardCharts available:', typeof window.DashboardCharts !== 'undefined');
+                console.log('Dashboard available:', typeof window.Dashboard !== 'undefined');
+
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(
+                    <ErrorBoundary>
+                        <Dashboard />
+                    </ErrorBoundary>
+                );
+                console.log('Dashboard rendered successfully');
+            } catch (err) {
+                console.error('Failed to initialize dashboard:', err);
+                document.getElementById('root').innerHTML = `
+                    <div style="padding: 40px; text-align: center; font-family: Arial, sans-serif;">
+                        <h1>⚠️ Initialization Error</h1>
+                        <p>Failed to load dashboard components.</p>
+                        <pre style="background: #f5f5f5; padding: 20px; border-radius: 8px; text-align: left;">
+                            ${err.toString()}
+                        </pre>
+                        <p style="margin-top: 20px;">
+                            <a href="dashboard-test.html" style="color: #3b82f6;">Run Diagnostic Test</a>
+                        </p>
+                    </div>
+                `;
+            }
+        }, 500);
     </script>
 </body>
 </html>

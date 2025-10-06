@@ -1,8 +1,11 @@
-*   # Open Exam Application (v1.8.5)
+# Open Exam Application - Cybernetic Edition (v2.0.0)
+
+[![Deploy to GitHub Pages](https://img.shields.io/badge/deploy-GitHub%20Pages-blue.svg)](https://pages.github.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ## Introduction
 
-The "Open Exam Application" is a standalone, offline-capable exam system built entirely within a single HTML file. Crafted with vanilla HTML, CSS, and JavaScript—and significantly accelerated with Google Gemini—it provides a highly flexible platform for creating and taking multiple-choice exams. It features timed tests, advanced user-driven exam configuration, and immediate, detailed results with performance analytics.
+The "Open Exam Application - Cybernetic Edition" is a standalone, offline-capable exam system with a futuristic cybernetic UI theme. Built with vanilla HTML, CSS, and JavaScript, it provides a highly flexible platform for creating and taking multiple-choice exams. It features timed tests, advanced user-driven exam configuration, immediate detailed results with performance analytics, and auto-redirect to dashboard upon completion.
 
 ## Features
 
@@ -54,9 +57,77 @@ The "Open Exam Application" is a standalone, offline-capable exam system built e
 
 For instructions on creating your own exam bank files, please refer to the **[bank/README.md](./bank/README.md)** file for the detailed JSON schema and field explanations.
 
+## 🚀 GitHub Pages Deployment
+
+This application is ready to deploy on GitHub Pages with zero configuration!
+
+### Quick Deployment Steps:
+
+1. **Fork or Clone this repository**
+   ```bash
+   git clone https://github.com/yourusername/Open-Exam-Application.git
+   cd Open-Exam-Application
+   ```
+
+2. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial deployment"
+   git push origin main
+   ```
+
+3. **Enable GitHub Pages**
+   - Go to your repository on GitHub
+   - Click **Settings** → **Pages**
+   - Under **Source**, select `main` branch
+   - Click **Save**
+   - Your site will be live at `https://yourusername.github.io/Open-Exam-Application/`
+
+### 🎨 New Cybernetic Features (v2.0.0):
+
+- **Neon Glow Effects**: Cyan (#00f3ff) and purple (#a855f7) color scheme
+- **Animated Gradients**: Flowing colors on titles, buttons, and progress bars
+- **Scanline Effect**: Retro-futuristic background animation
+- **Enhanced Dark Mode**: Ultra cyber theme with pink/magenta accents
+- **Auto-Redirect**: Automatically redirects to dashboard 3 seconds after exam completion
+- **Countdown Timer**: Visual countdown before redirect
+- **Custom Fonts**: Orbitron and Rajdhani for that tech-future aesthetic
+- **Glowing Hover Effects**: All interactive elements feature neon hover animations
+
+### File Structure:
+```
+Open-Exam-Application/
+├── index.html              # Landing page (NEW!)
+├── exam.html              # Main exam application
+├── dashboard.html         # Performance dashboard
+├── dashboard.css          # Dashboard styling
+├── Dashboard.jsx          # Dashboard React component
+├── DashboardCards.jsx     # Cards component
+├── DashboardCharts.jsx    # Charts component
+├── mockData.js            # Mock data for dashboard
+├── useDashboardData.js    # Custom React hook
+├── bank/                  # Exam question banks (JSON files)
+│   ├── README.md
+│   └── *.json
+├── .gitignore
+├── README.md
+└── CHANGES.md
+```
+
+### 🌐 Local Development:
+
+Simply open `index.html` in any modern browser. No build process or server required!
+
+```bash
+# Or use a simple HTTP server:
+python -m http.server 8000
+# Then visit: http://localhost:8000
+```
+
 ## Download
 
-*   The latest stable version can always be found as `exam.html` in the root of the project repository.
+*   The latest stable version can always be found in the root of the project repository.
+*   **Live Demo**: Visit your deployed GitHub Pages URL
 
 ## ⚠️ Disclaimer & AI-Generated Content Notice
 

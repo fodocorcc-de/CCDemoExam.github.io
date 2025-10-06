@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        #dashboard-preview {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard Component Test</h1>
+    <div id="test-results"></div>
+    <hr>
+    <div id="dashboard-preview"></div>
+
+    <!-- React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script>
+        const testResults = document.getElementById('test-results');
+
+        function addResult(message, success = true) {
+            const div = document.createElement('div');
+            div.className = `test-result ${success ? 'success' : 'error'}`;
+            div.textContent = message;
+            testResults.appendChild(div);
+        }
+
+        // Test 1: React loaded
+        if (typeof React !== 'undefined') {
+            addResult('✓ React loaded successfully');
+        } else {
+            addResult('✗ React failed to load', false);
+        }
+
+        // Test 2: ReactDOM loaded
+        if (typeof ReactDOM !== 'undefined') {
+            addResult('✓ ReactDOM loaded successfully');
+        } else {
+            addResult('✗ ReactDOM failed to load', false);
+        }
+
+        // Test 3: Chart.js loaded
+        if (typeof Chart !== 'undefined') {
+            addResult('✓ Chart.js loaded successfully');
+        } else {
+            addResult('✗ Chart.js failed to load', false);
+        }
+
+        // Test 4: Babel loaded
+        if (typeof Babel !== 'undefined') {
+            addResult('✓ Babel loaded successfully');
+        } else {
+            addResult('✗ Babel failed to load', false);
+        }
+    </script>
+
+    <!-- Load dashboard components -->
+    <script type="text/babel" src="mockData.js"></script>
+    <script type="text/babel" src="useDashboardData.js"></script>
+    <script type="text/babel" src="DashboardCards.jsx"></script>
+    <script type="text/babel" src="DashboardCharts.jsx"></script>
+    <script type="text/babel" src="Dashboard.jsx"></script>
+
+    <script type="text/babel">
+        // Test components loaded
+        setTimeout(() => {
+            if (typeof window.MockAPI !== 'undefined') {
+                addResult('✓ MockAPI loaded successfully');
+            } else {
+                addResult('✗ MockAPI failed to load', false);
+            }
+
+            if (typeof window.useDashboardData !== 'undefined') {
+                addResult('✓ useDashboardData hook loaded successfully');
+            } else {
+                addResult('✗ useDashboardData hook failed to load', false);
+            }
+
+            if (typeof window.DashboardCards !== 'undefined') {
+                addResult('✓ DashboardCards components loaded successfully');
+            } else {
+                addResult('✗ DashboardCards components failed to load', false);
+            }
+
+            if (typeof window.DashboardCharts !== 'undefined') {
+                addResult('✓ DashboardCharts components loaded successfully');
+            } else {
+                addResult('✗ DashboardCharts components failed to load', false);
+            }
+
+            if (typeof window.Dashboard !== 'undefined') {
+                addResult('✓ Dashboard component loaded successfully');
+            } else {
+                addResult('✗ Dashboard component failed to load', false);
+            }
+
+            // Try to render dashboard
+            try {
+                const root = ReactDOM.createRoot(document.getElementById('dashboard-preview'));
+                root.render(React.createElement(window.Dashboard));
+                addResult('✓ Dashboard rendered successfully');
+            } catch (err) {
+                addResult(`✗ Dashboard render failed: ${err.message}`, false);
+                console.error(err);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

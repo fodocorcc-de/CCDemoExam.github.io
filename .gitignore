@@ -1,5 +1,33 @@
+# Python files
 pycode/
+*.pyc
+__pycache__/
+
+# OS files
 .DS_Store
 */.DS_Store
+Thumbs.db
+NUL
+
+# Development files
 exam-next.html
-bank/CISSP5.json
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+
+# Node modules (if any future dependencies)
+node_modules/
+
+# Specific exam banks (optional - uncomment to exclude)
+# bank/CISSP5.json
