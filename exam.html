@@ -463,6 +463,247 @@ select option:disabled {
   color: #777;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+body.dark-mode #exam-container {
+    background-color: #2d3748;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4,
+body.dark-mode h1#exam-title, body.dark-mode #welcome-message {
+    color: #e2e8f0;
+}
+body.dark-mode #question-container,
+body.dark-mode #results-container,
+body.dark-mode #initial-load-instructions,
+body.dark-mode #exam-setup-options {
+    background-color: #374151;
+    border-color: #4a5568;
+}
+body.dark-mode .choice {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+body.dark-mode .choice:hover {
+    background-color: #374151;
+}
+body.dark-mode label, body.dark-mode p, body.dark-mode li {
+    color: #cbd5e0;
+}
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"],
+body.dark-mode select {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border-color: #4a5568;
+}
+body.dark-mode .review-list-item {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+body.dark-mode .review-list-item:hover {
+    background-color: #374151;
+}
+body.dark-mode .explanation {
+    background-color: #2c5282;
+    border-left-color: #4299e1;
+    color: #bee3f8;
+}
+body.dark-mode .domain-result {
+    background-color: #2c5282;
+    border-left-color: #4299e1;
+    color: #bee3f8;
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+#dark-mode-toggle:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+body.dark-mode #dark-mode-toggle {
+    background-color: #f39c12;
+}
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: #e67e22;
+}
+
+/* Dashboard Button */
+#dashboard-button:hover {
+    background-color: #7c3aed !important;
+    transform: scale(1.1);
+}
+
+/* Question Navigator */
+#question-navigator {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-height: 70vh;
+    overflow-y: auto;
+    display: none;
+    z-index: 999;
+}
+body.dark-mode #question-navigator {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+#question-navigator h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+.nav-question-btn {
+    padding: 8px;
+    border: 1px solid #cbd5e0;
+    background-color: #f7fafc;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8em;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+.nav-question-btn:hover {
+    background-color: #e2e8f0;
+    transform: scale(1.05);
+}
+.nav-question-btn.answered {
+    background-color: #c6f6d5;
+    border-color: #48bb78;
+}
+.nav-question-btn.current {
+    background-color: #3498db;
+    color: white;
+    border-color: #2980b9;
+}
+.nav-question-btn.bookmarked::after {
+    content: '★';
+    color: #f39c12;
+    font-size: 1.1em;
+}
+body.dark-mode .nav-question-btn {
+    background-color: #374151;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+body.dark-mode .nav-question-btn:hover {
+    background-color: #4a5568;
+}
+body.dark-mode .nav-question-btn.answered {
+    background-color: #2f855a;
+}
+
+/* Pause/Resume Button */
+#pause-resume-button {
+    background-color: #f39c12;
+    margin: 5px 3px;
+}
+#pause-resume-button:hover {
+    background-color: #e67e22;
+}
+#pause-resume-button.paused {
+    background-color: #27ae60;
+}
+#pause-resume-button.paused:hover {
+    background-color: #229954;
+}
+
+/* Bookmark Button */
+#bookmark-button {
+    background-color: #f39c12;
+    margin: 5px 3px;
+}
+#bookmark-button:hover {
+    background-color: #e67e22;
+}
+#bookmark-button.bookmarked {
+    background-color: #e67e22;
+}
+
+/* Export Button */
+#export-results-button {
+    background-color: #9b59b6;
+    margin-top: 15px;
+}
+#export-results-button:hover {
+    background-color: #8e44ad;
+}
+
+/* Keyboard Shortcuts Help */
+#shortcuts-help {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(52, 152, 219, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    display: none;
+    z-index: 1000;
+}
+body.dark-mode #shortcuts-help {
+    background-color: rgba(243, 156, 18, 0.9);
+}
+
+/* Pause Overlay */
+#pause-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+#pause-overlay-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+body.dark-mode #pause-overlay-content {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+#pause-overlay-content h2 {
+    margin-top: 0;
+    color: #f39c12;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     body {
@@ -500,11 +741,46 @@ select option:disabled {
         margin-top: 5px;
         text-align: center;
     }
+    #question-navigator {
+        display: none !important;
+    }
+    #dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
 }
 
 </style>
 </head>
 <body>
+
+<!-- Dark Mode Toggle -->
+<button id="dark-mode-toggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">🌙</button>
+
+<!-- Dashboard Button -->
+<button id="dashboard-button" title="View Dashboard" aria-label="View Dashboard" style="position: fixed; top: 20px; left: 20px; z-index: 1000; background-color: #8b5cf6; border: none; color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.2em; transition: background-color 0.3s ease, transform 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">📊</button>
+
+<!-- Question Navigator -->
+<div id="question-navigator" role="navigation" aria-label="Question navigator">
+  <h4>Questions</h4>
+  <div class="nav-grid" id="nav-grid" role="group" aria-label="Question list"></div>
+</div>
+
+<!-- Pause Overlay -->
+<div id="pause-overlay">
+  <div id="pause-overlay-content">
+    <h2>⏸️ Exam Paused</h2>
+    <p>Press "Resume" or Space to continue</p>
+    <button id="resume-from-overlay-button" class="button-base nav-button">Resume</button>
+  </div>
+</div>
+
+<!-- Keyboard Shortcuts Help -->
+<div id="shortcuts-help">
+  <strong>Shortcuts:</strong> ← Prev | → Next | Space Pause | B Bookmark | ? Help
+</div>
 
 <div id="exam-container">
   <h1 id="exam-title">Open Exam Application</h1>
@@ -595,11 +871,13 @@ select option:disabled {
   <p id="progress-text" style="display: none;"></p>
   <div id="timer" style="display: none;">Time Remaining: <span id="time-remaining"></span></div>
 
-  <div id="question-container" style="display: none;">
-    <div id="question"></div>
-    <button id="back-button" class="nav-button button-base" disabled>Back</button>
-    <button id="next-button" class="nav-button button-base">Next</button>
-    <button id="submit-button" class="nav-button button-base" style="display: none;">Submit</button>
+  <div id="question-container" style="display: none;" role="main" aria-live="polite">
+    <div id="question" role="heading" aria-level="2"></div>
+    <button id="back-button" class="nav-button button-base" disabled aria-label="Go to previous question">Back</button>
+    <button id="next-button" class="nav-button button-base" aria-label="Go to next question">Next</button>
+    <button id="submit-button" class="nav-button button-base" style="display: none;" aria-label="Submit exam">Submit</button>
+    <button id="pause-resume-button" class="button-base" style="display: none;" aria-label="Pause exam">⏸️ Pause</button>
+    <button id="bookmark-button" class="button-base" aria-label="Bookmark this question">🔖 Bookmark</button>
   </div>
 
   <div id="results-container" style="display: none;">
@@ -616,6 +894,10 @@ select option:disabled {
     <p>Correct: <span id="correct-review" class="review-link"></span></p>
     <p>Incorrect: <span id="incorrect-review" class="review-link"></span></p>
     <p>Unanswered: <span id="unanswered-review" class="review-link"></span></p>
+    <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button id="export-results-button" class="button-base">📥 Export Results</button>
+        <button id="view-dashboard-button" class="button-base" style="background-color: #8b5cf6;">📊 View Dashboard</button>
+    </div>
   </div>
 
   <div id="review-container" style="display: none;">
@@ -670,7 +952,7 @@ select option:disabled {
 <div id="version-info"></div>
 
 <script>
-const APP_VERSION = "1.8.5";
+const APP_VERSION = "2.0.0";
 const DEBUG = true; // Set to false to hide console logs
 
 const defaultExamData = {
@@ -740,6 +1022,17 @@ const progressBar = document.getElementById('progress-bar');
 const progressText = document.getElementById('progress-text');
 const averageTimeSpan = document.getElementById('average-time');
 const versionInfoDiv = document.getElementById('version-info');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const questionNavigator = document.getElementById('question-navigator');
+const navGrid = document.getElementById('nav-grid');
+const pauseResumeButton = document.getElementById('pause-resume-button');
+const bookmarkButton = document.getElementById('bookmark-button');
+const exportResultsButton = document.getElementById('export-results-button');
+const pauseOverlay = document.getElementById('pause-overlay');
+const resumeFromOverlayButton = document.getElementById('resume-from-overlay-button');
+const shortcutsHelp = document.getElementById('shortcuts-help');
+const dashboardButton = document.getElementById('dashboard-button');
+const viewDashboardButton = document.getElementById('view-dashboard-button');
 
 // State Variables
 let currentQuestionIndex = 0;
@@ -760,8 +1053,11 @@ let confidenceScores = [];
 let avgTimePerQuestionForConfidence = 0;
 let showTimeWarning = false;
 let questionTimeSpent = [];
+let isPaused = false;
+let bookmarkedQuestions = new Set();
 
 const TIME_PER_QUESTION_SECONDS = 90;
+const STORAGE_KEY = 'examAppState';
 
 let currentExamSetup = {
     type: 'default',
@@ -781,6 +1077,21 @@ function setupEventListeners() {
     if (browseFileButton) browseFileButton.addEventListener('click', () => jsonFileInput.click());
     jsonFileInput.addEventListener('change', handleFileSelectAndLoad);
     runDemoButton.addEventListener('click', startDemoExam);
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+    pauseResumeButton.addEventListener('click', togglePause);
+    resumeFromOverlayButton.addEventListener('click', togglePause);
+    bookmarkButton.addEventListener('click', toggleBookmark);
+    exportResultsButton.addEventListener('click', exportResults);
+    dashboardButton.addEventListener('click', () => {
+        window.location.href = 'dashboard.html';
+    });
+    if (viewDashboardButton) {
+        viewDashboardButton.addEventListener('click', () => {
+            window.location.href = 'dashboard.html?from=exam';
+        });
+    }
+
+    document.addEventListener('keydown', handleKeyboardShortcuts);
 
     document.querySelectorAll('input[name="exam-setup-type"]').forEach(radio => {
         radio.addEventListener('change', handleSetupTypeChange);
@@ -795,6 +1106,14 @@ window.addEventListener('DOMContentLoaded', () => {
         versionInfoDiv.innerText = `Exam System v${APP_VERSION}`;
     }
     setupEventListeners();
+    loadDarkModePreference();
+    checkForSavedExam();
+
+    // Show shortcuts help briefly on first load
+    setTimeout(() => {
+        shortcutsHelp.style.display = 'block';
+        setTimeout(() => { shortcutsHelp.style.display = 'none'; }, 5000);
+    }, 1000);
 });
 
 
@@ -1140,12 +1459,23 @@ function startActualExam() {
 
     currentQuestionIndex = 0; userAnswers = {}; correctAnswersCount = 0; incorrectAnswersCount = 0;
     correctQuestionsList = []; incorrectQuestionsList = []; confidenceScores = []; questionTimeSpent = []; examStartTime = Date.now();
+    bookmarkedQuestions = new Set(); isPaused = false;
 
     const examDurationMinutes = setup.totalTimeMinutes;
 
-    if (examDurationMinutes > 0) { timeRemaining = examDurationMinutes * 60; updateTimerDisplay(); startTimerInterval(); } 
-    else { timeRemainingSpan.innerText = "Unlimited"; }
+    if (examDurationMinutes > 0) {
+        timeRemaining = examDurationMinutes * 60;
+        updateTimerDisplay();
+        startTimerInterval();
+        pauseResumeButton.style.display = 'inline-block';
+    } else {
+        timeRemainingSpan.innerText = "Unlimited";
+        pauseResumeButton.style.display = 'none';
+    }
+
+    buildQuestionNavigator();
     showQuestion();
+    saveExamState();
 }
 
 function updateProgress() {
@@ -1169,6 +1499,7 @@ function showQuestion() {
     questionData.Choices.forEach((choice, index) => {
         const choiceDiv = document.createElement('div'); choiceDiv.classList.add('choice');
         const radio = document.createElement('input'); radio.type = 'radio'; radio.name = 'answer'; radio.value = choice; radio.id = `choice${index + 1}`;
+        radio.addEventListener('change', () => { saveAnswer(); });
         const label = document.createElement('label'); label.htmlFor = `choice${index + 1}`; label.innerText = choice;
         choiceDiv.appendChild(radio); choiceDiv.appendChild(label);
         choicesContainer.insertBefore(choiceDiv, backButton);
@@ -1190,6 +1521,8 @@ function showQuestion() {
   nextButton.style.display = currentQuestionIndex === randomizedExamData.length - 1 ? 'none' : 'inline-block';
   submitButton.style.display = currentQuestionIndex === randomizedExamData.length - 1 ? 'inline-block' : 'none';
   updateProgress();
+  updateBookmarkButton();
+  updateQuestionNavigator();
 }
 
 function calculateAndStoreConfidenceScore() {
@@ -1212,15 +1545,19 @@ function calculateAndStoreConfidenceScore() {
     if(DEBUG) console.log(`Q${currentQuestionIndex + 1}: Time spent: ${timeSpent.toFixed(2)}s, Correct: ${isCorrect}, Score: ${score}`);
 }
 
-function goNext() { saveAnswer(); calculateAndStoreConfidenceScore(); currentQuestionIndex++; showQuestion(); }
+function goNext() { saveAnswer(); calculateAndStoreConfidenceScore(); currentQuestionIndex++; showQuestion(); saveExamState(); }
 function goBack() {
     if (isBackNavigationDisabled) return;
-    saveAnswer(); calculateAndStoreConfidenceScore(); currentQuestionIndex--; showQuestion();
+    saveAnswer(); calculateAndStoreConfidenceScore(); currentQuestionIndex--; showQuestion(); saveExamState();
 }
 
 function saveAnswer() {
   const selectedAnswerNode = choicesContainer.querySelector('input[name="answer"]:checked');
-  if (selectedAnswerNode) userAnswers[currentQuestionIndex] = selectedAnswerNode.value;
+  if (selectedAnswerNode) {
+      userAnswers[currentQuestionIndex] = selectedAnswerNode.value;
+      updateQuestionNavigator();
+      saveExamState();
+  }
 }
 
 function startTimerInterval() {
@@ -1250,6 +1587,13 @@ function submitActualExam() {
     questionContainer.style.display = 'none'; timerDiv.style.display = 'none'; resultsContainer.style.display = 'block';
     submitButton.style.display = 'none'; nextButton.style.display = 'none'; backButton.style.display = 'none';
     progressBarContainer.style.display = 'none'; progressText.style.display = 'none';
+    questionNavigator.style.display = 'none';
+    pauseResumeButton.style.display = 'none';
+    pauseOverlay.style.display = 'none';
+    clearExamState();
+
+    // Save exam completion time
+    const examEndTime = Date.now();
 
     correctAnswersCount = 0; incorrectAnswersCount = 0; 
     let unansweredCount = 0;
@@ -1314,6 +1658,33 @@ function submitActualExam() {
     if (incorrectQuestionsList.length > 0) { incorrectReviewSpan.innerText = `Review Incorrect (${incorrectQuestionsList.length})`; incorrectReviewSpan.onclick = () => reviewQuestionsByDomain(incorrectQuestionsList); }
     unansweredReviewSpan.style.display = unansweredQuestionsList.length === 0 ? 'none' : 'inline';
     if (unansweredQuestionsList.length > 0) { unansweredReviewSpan.innerText = `Review Unanswered (${unansweredQuestionsList.length})`; unansweredReviewSpan.onclick = () => reviewQuestionsByDomain(unansweredQuestionsList); }
+
+    // Save exam result for dashboard
+    const examResult = {
+        id: Date.now(),
+        name: examData["Exam Name"],
+        date: new Date().toISOString(),
+        score: percentage,
+        maxScore: 100,
+        timeSpent: Math.floor((examEndTime - examStartTime) / (1000 * 60)),
+        status: 'completed',
+        questionCount: numQuestionsInExam,
+        correctAnswers: correctAnswersCount,
+        incorrectAnswers: incorrectAnswersCount,
+        unanswered: unansweredCount,
+        confidenceScore: confidencePercentage,
+        domainResults: domainResults
+    };
+
+    // Save to sessionStorage for dashboard
+    sessionStorage.setItem('latestExamResult', JSON.stringify(examResult));
+
+    // Auto-redirect to dashboard after 5 seconds
+    setTimeout(() => {
+        if (confirm('Exam completed! Would you like to view your dashboard?')) {
+            window.location.href = 'dashboard.html?from=exam';
+        }
+    }, 2000);
 }
 
 function reviewQuestionsByDomain(questionIndicesList) {
@@ -1379,6 +1750,347 @@ function reviewQuestionsByDomain(questionIndicesList) {
 }
 
 function returnToResults() { reviewContainer.style.display = 'none'; resultsContainer.style.display = 'block'; }
+
+// --- NEW ENHANCED FEATURES ---
+
+// Dark Mode Functions
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+}
+
+function loadDarkModePreference() {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️';
+    }
+}
+
+// Local Storage Functions
+function saveExamState() {
+    if (randomizedExamData.length === 0) return;
+
+    const state = {
+        examData: examData,
+        randomizedExamData: randomizedExamData,
+        currentQuestionIndex: currentQuestionIndex,
+        userAnswers: userAnswers,
+        timeRemaining: timeRemaining,
+        examStartTime: examStartTime,
+        currentExamSetup: currentExamSetup,
+        bookmarkedQuestions: Array.from(bookmarkedQuestions),
+        questionTimeSpent: questionTimeSpent,
+        confidenceScores: confidenceScores,
+        questionStartTime: questionStartTime,
+        showTimeWarning: showTimeWarning,
+        timestamp: Date.now()
+    };
+
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        if(DEBUG) console.log('Exam state saved');
+    } catch (e) {
+        console.error('Failed to save exam state:', e);
+    }
+}
+
+function loadExamState() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) return null;
+
+        const state = JSON.parse(saved);
+
+        // Check if saved state is not too old (24 hours)
+        const hoursSinceSave = (Date.now() - state.timestamp) / (1000 * 60 * 60);
+        if (hoursSinceSave > 24) {
+            localStorage.removeItem(STORAGE_KEY);
+            return null;
+        }
+
+        return state;
+    } catch (e) {
+        console.error('Failed to load exam state:', e);
+        return null;
+    }
+}
+
+function clearExamState() {
+    localStorage.removeItem(STORAGE_KEY);
+    if(DEBUG) console.log('Exam state cleared');
+}
+
+function checkForSavedExam() {
+    const state = loadExamState();
+    if (!state) return;
+
+    const resume = confirm('You have an exam in progress. Would you like to resume it?');
+    if (resume) {
+        restoreExamState(state);
+    } else {
+        clearExamState();
+    }
+}
+
+function restoreExamState(state) {
+    examData = state.examData;
+    randomizedExamData = state.randomizedExamData;
+    currentQuestionIndex = state.currentQuestionIndex;
+    userAnswers = state.userAnswers;
+    timeRemaining = state.timeRemaining;
+    examStartTime = state.examStartTime;
+    currentExamSetup = state.currentExamSetup;
+    bookmarkedQuestions = new Set(state.bookmarkedQuestions || []);
+    questionTimeSpent = state.questionTimeSpent || [];
+    confidenceScores = state.confidenceScores || [];
+    showTimeWarning = state.showTimeWarning || false;
+
+    // Calculate avgTimePerQuestionForConfidence
+    if (currentExamSetup.totalTimeMinutes > 0 && currentExamSetup.numQuestions > 0) {
+        avgTimePerQuestionForConfidence = (currentExamSetup.totalTimeMinutes * 60) / currentExamSetup.numQuestions;
+    } else {
+        avgTimePerQuestionForConfidence = TIME_PER_QUESTION_SECONDS;
+    }
+
+    // Restore UI
+    initialLoadInstructionsDiv.style.display = 'none';
+    examSetupOptionsDiv.style.display = 'none';
+    questionContainer.style.display = 'block';
+    timerDiv.style.display = 'block';
+    progressBarContainer.style.display = 'block';
+    progressText.style.display = 'block';
+    questionNavigator.style.display = 'block';
+
+    welcomeMessage.innerText = `Welcome to the ${examData["Exam Name"]}!`;
+    examTitle.innerText = examData["Exam Name"];
+    isBackNavigationDisabled = (examData.BackNavigation === false);
+
+    // Show pause button if timed
+    if (currentExamSetup.totalTimeMinutes > 0) {
+        pauseResumeButton.style.display = 'inline-block';
+    }
+
+    // Restart timer if needed
+    if (timeRemaining > 0) {
+        updateTimerDisplay();
+        startTimerInterval();
+    }
+
+    buildQuestionNavigator();
+    showQuestion();
+
+    if(DEBUG) console.log('Exam state restored');
+}
+
+// Pause/Resume Functions
+function togglePause() {
+    isPaused = !isPaused;
+
+    if (isPaused) {
+        clearInterval(timerInterval);
+        pauseResumeButton.textContent = '▶️ Resume';
+        pauseResumeButton.classList.add('paused');
+        pauseOverlay.style.display = 'flex';
+        saveExamState();
+    } else {
+        if (timeRemaining > 0) {
+            startTimerInterval();
+        }
+        pauseResumeButton.textContent = '⏸️ Pause';
+        pauseResumeButton.classList.remove('paused');
+        pauseOverlay.style.display = 'none';
+        questionStartTime = Date.now(); // Reset question start time
+    }
+}
+
+// Keyboard Shortcuts
+function handleKeyboardShortcuts(e) {
+    // Don't trigger shortcuts when typing in input fields
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        return;
+    }
+
+    // Only active during exam
+    if (questionContainer.style.display !== 'block') {
+        return;
+    }
+
+    switch(e.key) {
+        case 'ArrowLeft':
+            if (!backButton.disabled && !isBackNavigationDisabled) {
+                e.preventDefault();
+                goBack();
+            }
+            break;
+        case 'ArrowRight':
+            e.preventDefault();
+            if (currentQuestionIndex === randomizedExamData.length - 1) {
+                if (confirm('Submit exam?')) submitActualExam();
+            } else {
+                goNext();
+            }
+            break;
+        case ' ':
+            e.preventDefault();
+            if (pauseResumeButton.style.display !== 'none') {
+                togglePause();
+            }
+            break;
+        case 'b':
+        case 'B':
+            e.preventDefault();
+            toggleBookmark();
+            break;
+        case '?':
+            e.preventDefault();
+            toggleShortcutsHelp();
+            break;
+    }
+}
+
+function toggleShortcutsHelp() {
+    shortcutsHelp.style.display = shortcutsHelp.style.display === 'none' ? 'block' : 'none';
+}
+
+// Bookmark Functions
+function toggleBookmark() {
+    if (bookmarkedQuestions.has(currentQuestionIndex)) {
+        bookmarkedQuestions.delete(currentQuestionIndex);
+        bookmarkButton.textContent = '🔖 Bookmark';
+        bookmarkButton.classList.remove('bookmarked');
+    } else {
+        bookmarkedQuestions.add(currentQuestionIndex);
+        bookmarkButton.textContent = '🔖 Bookmarked';
+        bookmarkButton.classList.add('bookmarked');
+    }
+    updateQuestionNavigator();
+    saveExamState();
+}
+
+function updateBookmarkButton() {
+    if (bookmarkedQuestions.has(currentQuestionIndex)) {
+        bookmarkButton.textContent = '🔖 Bookmarked';
+        bookmarkButton.classList.add('bookmarked');
+    } else {
+        bookmarkButton.textContent = '🔖 Bookmark';
+        bookmarkButton.classList.remove('bookmarked');
+    }
+}
+
+// Export Results Function
+function exportResults() {
+    const exportData = {
+        examName: examData["Exam Name"],
+        date: new Date().toISOString(),
+        score: {
+            correct: correctAnswersCount,
+            incorrect: incorrectAnswersCount,
+            unanswered: randomizedExamData.length - correctAnswersCount - incorrectAnswersCount,
+            total: randomizedExamData.length,
+            percentage: percentageSpan.textContent,
+            confidenceScore: document.getElementById('confidence-score').textContent
+        },
+        timeStats: {
+            averageTimePerQuestion: averageTimeSpan.textContent,
+            totalTimeMinutes: currentExamSetup.totalTimeMinutes
+        },
+        domainResults: {},
+        questions: []
+    };
+
+    // Add domain results
+    const domainEls = domainResultsDiv.querySelectorAll('.domain-result');
+    domainEls.forEach(el => {
+        const text = el.textContent;
+        const match = text.match(/(.+): (\d+)\/(\d+) \((.+)%\)/);
+        if (match) {
+            exportData.domainResults[match[1]] = {
+                correct: parseInt(match[2]),
+                total: parseInt(match[3]),
+                percentage: match[4]
+            };
+        }
+    });
+
+    // Add question details
+    randomizedExamData.forEach((q, idx) => {
+        exportData.questions.push({
+            number: idx + 1,
+            domain: q.DomainOfKnowledge,
+            question: q.Question,
+            choices: q.Choices,
+            correctAnswer: q.AnswerKey,
+            userAnswer: userAnswers[idx] || 'Not Answered',
+            isCorrect: userAnswers[idx] === q.AnswerKey,
+            timeSpent: questionTimeSpent[idx] || 0,
+            confidenceScore: confidenceScores[idx] || 0,
+            bookmarked: bookmarkedQuestions.has(idx),
+            explanation: q.Explaination
+        });
+    });
+
+    // Create downloadable file
+    const dataStr = JSON.stringify(exportData, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `exam-results-${examData["Exam Name"].replace(/\s+/g, '-')}-${new Date().toISOString().split('T')[0]}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
+// Question Navigator Functions
+function buildQuestionNavigator() {
+    navGrid.innerHTML = '';
+    randomizedExamData.forEach((_, idx) => {
+        const btn = document.createElement('div');
+        btn.className = 'nav-question-btn';
+        btn.textContent = idx + 1;
+        btn.onclick = () => navigateToQuestion(idx);
+        btn.setAttribute('role', 'button');
+        btn.setAttribute('tabindex', '0');
+        btn.setAttribute('aria-label', `Go to question ${idx + 1}`);
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navigateToQuestion(idx);
+            }
+        });
+        navGrid.appendChild(btn);
+    });
+    questionNavigator.style.display = 'block';
+    updateQuestionNavigator();
+}
+
+function updateQuestionNavigator() {
+    const buttons = navGrid.querySelectorAll('.nav-question-btn');
+    buttons.forEach((btn, idx) => {
+        btn.classList.remove('answered', 'current', 'bookmarked');
+
+        if (userAnswers[idx] !== undefined) {
+            btn.classList.add('answered');
+        }
+        if (idx === currentQuestionIndex) {
+            btn.classList.add('current');
+        }
+        if (bookmarkedQuestions.has(idx)) {
+            btn.classList.add('bookmarked');
+        }
+    });
+}
+
+function navigateToQuestion(index) {
+    if (isPaused) return;
+
+    saveAnswer();
+    calculateAndStoreConfidenceScore();
+    currentQuestionIndex = index;
+    showQuestion();
+}
 
 if (typeof CSS === 'undefined' || typeof CSS.escape !== 'function') { CSS = { escape: (value) => { if (arguments.length == 0) throw new TypeError("`CSS.escape` requires an argument."); var string = String(value); var length = string.length; var index = -1; var codeUnit; var result = ''; var firstCodeUnit = string.charCodeAt(0); while (++index < length) { codeUnit = string.charCodeAt(index); if (codeUnit == 0x0000) { result += '\uFFFD'; } else if ((codeUnit >= 0x0001 && codeUnit <= 0x001F) || codeUnit == 0x007F || (index == 0 && codeUnit >= 0x0030 && codeUnit <= 0x0039) || (index == 1 && codeUnit >= 0x0030 && codeUnit <= 0x0039 && firstCodeUnit == 0x002D )) { result += '\\' + codeUnit.toString(16) + ' '; } else if ( codeUnit >= 0x0080 || codeUnit == 0x002D || codeUnit == 0x005F || (codeUnit >= 0x0030 && codeUnit <= 0x0039) || (codeUnit >= 0x0041 && codeUnit <= 0x005A) || (codeUnit >= 0x0061 && codeUnit <= 0x007A) ) { result += string.charAt(index); } else { result += '\\' + string.charAt(index); } } return result; }}; }
 

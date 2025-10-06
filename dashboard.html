@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Dashboard - Performance Analytics</title>
+
+    <!-- React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel Standalone for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Mock Data -->
+    <script type="text/babel" src="mockData.js"></script>
+
+    <!-- Custom Hook -->
+    <script type="text/babel" src="useDashboardData.js"></script>
+
+    <!-- Components -->
+    <script type="text/babel" src="DashboardCards.jsx"></script>
+    <script type="text/babel" src="DashboardCharts.jsx"></script>
+
+    <!-- Main Dashboard -->
+    <script type="text/babel" src="Dashboard.jsx"></script>
+
+    <!-- Initialize App -->
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Dashboard />);
+    </script>
+</body>
+</html>
