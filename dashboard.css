@@ -460,10 +460,14 @@ body::before {
 }
 
 /* ==================== PERFORMANCE CARD ==================== */
+.performance-card {
+    height: 100%;
+}
+
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-lg);
 }
 
 .stat-item {
@@ -877,9 +881,13 @@ body::before {
 }
 
 /* ==================== QUICK ACTIONS CARD ==================== */
+.quick-actions-card {
+    height: 100%;
+}
+
 .actions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
 }
 
@@ -1252,17 +1260,25 @@ body::before {
     .header-right {
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .actions-grid {
+        grid-template-columns: 1fr;
     }
 
     .col-3,
     .col-4,
     .col-5,
+    .col-6,
     .col-7,
-    .col-8 {
+    .col-8,
+    .col-9 {
         grid-column: span 12;
     }
 
@@ -1273,6 +1289,10 @@ body::before {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .dashboard-header {
+        padding: var(--spacing-lg);
+    }
+
     .dashboard-header h1 {
         font-size: 1.5em;
         letter-spacing: 2px;
@@ -1284,14 +1304,27 @@ body::before {
 
     .header-right {
         width: 100%;
+        flex-direction: column;
+    }
+
+    .date-range-select,
+    .btn-export,
+    .btn-primary {
+        width: 100%;
+    }
+
+    .dashboard-card {
+        padding: var(--spacing-lg);
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .achievements-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
     }
 
     .actions-grid {
@@ -1299,17 +1332,32 @@ body::before {
     }
 
     .exams-table {
-        font-size: 0.85em;
+        font-size: 0.8em;
+    }
+
+    .exams-table th,
+    .exams-table td {
+        padding: var(--spacing-sm);
     }
 
     .calendar-heatmap {
         grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
     }
 
     .notification {
         left: var(--spacing-md);
         right: var(--spacing-md);
         max-width: none;
+    }
+
+    .circular-progress {
+        width: 100px;
+        height: 100px;
+    }
+
+    .action-icon {
+        font-size: 2em;
     }
 }
 

@@ -288,16 +288,20 @@ function Dashboard() {
             <main className="dashboard-main">
                 {/* Top Row - Quick Actions & Performance Summary */}
                 <div className="dashboard-row">
-                    <QuickActionsCard
-                        lastExam={data.recentExams[0]}
-                        onStartExam={handleStartExam}
-                        onReviewBookmarks={handleReviewBookmarks}
-                        onResume={handleResumeExam}
-                    />
-                    <PerformanceSummaryCard
-                        stats={data.userStats}
-                        comparisonData={comparisonData}
-                    />
+                    <div className="col-5">
+                        <QuickActionsCard
+                            lastExam={data.recentExams[0]}
+                            onStartExam={handleStartExam}
+                            onReviewBookmarks={handleReviewBookmarks}
+                            onResume={handleResumeExam}
+                        />
+                    </div>
+                    <div className="col-7">
+                        <PerformanceSummaryCard
+                            stats={data.userStats}
+                            comparisonData={comparisonData}
+                        />
+                    </div>
                 </div>
 
                 {/* Second Row - Charts */}
@@ -331,10 +335,12 @@ function Dashboard() {
 
                 {/* Fourth Row - Recent Exams */}
                 <div className="dashboard-row">
-                    <RecentExamsCard
-                        exams={data.recentExams}
-                        onExamClick={handleExamClick}
-                    />
+                    <div className="col-12">
+                        <RecentExamsCard
+                            exams={data.recentExams}
+                            onExamClick={handleExamClick}
+                        />
+                    </div>
                 </div>
 
                 {/* Fifth Row - Calendar, Peak Hours & Goals */}
@@ -356,7 +362,9 @@ function Dashboard() {
 
                 {/* Sixth Row - Achievements */}
                 <div className="dashboard-row">
-                    <AchievementsCard achievements={data.achievements} />
+                    <div className="col-12">
+                        <AchievementsCard achievements={data.achievements} />
+                    </div>
                 </div>
             </main>
 
