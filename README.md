@@ -139,3 +139,5 @@ While Gemini is a powerful tool for accelerating development, it's important to 
 *   **Verify and Test:** If you intend to use or modify this application, thorough review, testing, and validation of the code are strongly recommended.
 
 **By using this software, you acknowledge and accept these disclaimers.**
+#   C C D e m o E x a m . g i t h u b . i o  
+ 
